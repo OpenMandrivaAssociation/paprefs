@@ -1,12 +1,22 @@
 %define name paprefs
-%define version 0.9.5
-%define release %mkrel 2
+%define version 0.9.6
+%define rel 1
+%define svn 30
+%if %{svn}
+%define release %mkrel 0.%{svn}.%rel
+%else
+%define release %mkrel %rel
+%endif
 
 Summary: PulseAudio Preferences
 Name: %{name}
 Version: %{version}
 Release: %{release}
+%if %{svn}
+Source0: %{name}-%{svn}.tar.bz2
+%else
 Source0: %{name}-%{version}.tar.bz2
+%endif
 License: GPL
 Group: Sound
 Url: http://0pointer.de/lennart/projects/paprefs/
@@ -30,10 +40,21 @@ requires that a special module module-gconf is loaded in the sound
 server.
 
 %prep
+%if %{svn}
+%setup -q -n %{name}
+%else
 %setup -q
+%endif
 
 %build
-#export CPPFLAGS=-I%_includedir/alsa
+%if %{svn}
+libtoolize --force
+# Filthy hack
+cp %{_bindir}/gettextize .
+sed -i 's/read dummy/\#/' gettextize
+sed -i 's,gettextize,./gettextize,' bootstrap.sh
+NOCONFIGURE=1 ./bootstrap.sh
+%endif
 %configure2_5x
 %make
 
@@ -47,6 +68,7 @@ desktop-file-install --vendor="" \
   --remove-category="Application" \
   --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
 
+%find_lang %{name}
 %post
 %{_bindir}/update-desktop-database %{_datadir}/applications > /dev/null
 
@@ -56,7 +78,7 @@ if [ -x %{_bindir}/update-desktop-database ]; then %{_bindir}/update-desktop-dat
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(-,root,root)
 %doc README LICENSE
 %_bindir/%name
