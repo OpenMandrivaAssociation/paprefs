@@ -25,7 +25,8 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: gtkmm2.4-devel
 BuildRequires: libglademm2.4-devel
 BuildRequires: gconfmm2.6-devel
-BuildRequires: libpulseaudio-devel >= 0.9.5
+BuildRequires: gettext-devel
+BuildRequires: libpulseaudio-devel >= 0.9.7
 BuildRequires: lynx
 BuildRequires: desktop-file-utils
 Requires: pulseaudio
