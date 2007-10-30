@@ -1,7 +1,7 @@
 %define name paprefs
 %define version 0.9.6
 %define rel 1
-%define svn 30
+%define svn 0
 %if %{svn}
 %define release %mkrel 0.%{svn}.%rel
 %else
@@ -13,11 +13,10 @@ Name: %{name}
 Version: %{version}
 Release: %{release}
 %if %{svn}
-Source0: %{name}-%{svn}.tar.bz2
+Source0: %{name}-%{svn}.tar.gz
 %else
-Source0: %{name}-%{version}.tar.bz2
+Source0: %{name}-%{version}.tar.gz
 %endif
-Patch0: gettextize.patch
 License: GPL
 Group: Sound
 Url: http://0pointer.de/lennart/projects/paprefs/
@@ -48,7 +47,6 @@ server.
 %else
 %setup -q
 %endif
-%patch0 -p0
 
 %build
 %if %{svn}
