@@ -17,6 +17,7 @@ Source0: %{name}-%{svn}.tar.bz2
 %else
 Source0: %{name}-%{version}.tar.bz2
 %endif
+Patch0: gettextize.patch
 License: GPL
 Group: Sound
 Url: http://0pointer.de/lennart/projects/paprefs/
@@ -45,14 +46,11 @@ server.
 %else
 %setup -q
 %endif
+%patch0 -p0
 
 %build
 %if %{svn}
 libtoolize --force
-# Filthy hack
-cp %{_bindir}/gettextize .
-sed -i 's/read dummy/\#/' gettextize
-sed -i 's,gettextize,./gettextize,' bootstrap.sh
 NOCONFIGURE=1 ./bootstrap.sh
 %endif
 %configure2_5x
