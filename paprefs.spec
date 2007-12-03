@@ -1,6 +1,6 @@
 %define name paprefs
 %define version 0.9.6
-%define rel 1
+%define rel 2
 %define svn 0
 %if %{svn}
 %define release %mkrel 0.%{svn}.%rel
@@ -29,7 +29,7 @@ BuildRequires: gettext-devel
 BuildRequires: libpulseaudio-devel >= 0.9.7
 BuildRequires: lynx
 BuildRequires: desktop-file-utils
-Requires: pulseaudio
+Requires: pulseaudio-module-gconf
 Requires(post): desktop-file-utils
 Requires(postun): desktop-file-utils
 
