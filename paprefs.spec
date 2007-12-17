@@ -20,7 +20,6 @@ Source0: %{name}-%{version}.tar.gz
 License: GPL
 Group: Sound
 Url: http://0pointer.de/lennart/projects/paprefs/
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: gtkmm2.4-devel
 BuildRequires: libglademm2.4-devel
 BuildRequires: gconfmm2.6-devel
