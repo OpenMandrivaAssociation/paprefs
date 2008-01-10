@@ -1,6 +1,6 @@
 %define name paprefs
 %define version 0.9.6
-%define rel 2
+%define rel 3
 %define svn 0
 %if %{svn}
 %define release %mkrel 0.%{svn}.%rel
@@ -62,16 +62,19 @@ rm -rf $RPM_BUILD_ROOT
 
 desktop-file-install --vendor="" \
   --add-category="GTK" \
-  --add-category="X-MandrivaLinux-Multimedia-Sound" \
+  --add-category="X-MandrivaLinux-CrossDesktop" \
+  --add-category="System" \
   --remove-category="Application" \
   --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
 
 %find_lang %{name}
 %post
-%{_bindir}/update-desktop-database %{_datadir}/applications > /dev/null
+%update_desktop_database
+%update_menus
 
 %postun
-if [ -x %{_bindir}/update-desktop-database ]; then %{_bindir}/update-desktop-database %{_datadir}/applications > /dev/null ; fi
+%clean_desktop
+%clean_menus
 
 %clean
 rm -rf $RPM_BUILD_ROOT
