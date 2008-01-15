@@ -1,6 +1,6 @@
 %define name paprefs
 %define version 0.9.6
-%define rel 4
+%define rel 5
 %define svn 0
 %if %{svn}
 %define release %mkrel 0.%{svn}.%rel
