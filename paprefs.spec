@@ -1,6 +1,6 @@
 %define name paprefs
 %define version 0.9.6
-%define rel 5
+%define rel 6
 %define svn 0
 %if %{svn}
 %define release %mkrel 0.%{svn}.%rel
@@ -67,7 +67,6 @@ desktop-file-install --vendor="" \
   --add-category="GTK" \
   --add-category="System" \
   --add-category="X-MandrivaLinux-CrossDesktop" \
-  --add-category="X-MandrivaLinux-Multimedia-Sound" \
   --remove-category="Application" \
   --dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/%{name}.desktop
 
@@ -78,10 +77,12 @@ install -D -m 0644 %SOURCE2 %{buildroot}%{_iconsdir}/%{name}.png
 %find_lang %{name}
 
 %post
-%{_bindir}/update-desktop-database %{_datadir}/applications > /dev/null
+%update_desktop_database
+%update_menus
 
 %postun
-if [ -x %{_bindir}/update-desktop-database ]; then %{_bindir}/update-desktop-database %{_datadir}/applications > /dev/null ; fi
+%clean_desktop
+%clean_menus
 
 %clean
 rm -rf %{buildroot}
