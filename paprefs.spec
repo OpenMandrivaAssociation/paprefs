@@ -1,6 +1,6 @@
 %define name paprefs
 %define version 0.9.6
-%define rel 6
+%define rel 7
 %define svn 0
 %if %{svn}
 %define release %mkrel 0.%{svn}.%rel
@@ -81,7 +81,7 @@ install -D -m 0644 %SOURCE2 %{buildroot}%{_iconsdir}/%{name}.png
 %update_menus
 
 %postun
-%clean_desktop
+%clean_desktop_database
 %clean_menus
 
 %clean
