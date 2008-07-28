@@ -1,6 +1,6 @@
 %define name paprefs
 %define version 0.9.6
-%define rel 7
+%define rel 8
 %define svn 0
 %if %{svn}
 %define release %mkrel 0.%{svn}.%rel
@@ -19,6 +19,7 @@ Source0: %{name}-%{version}.tar.gz
 %endif
 Source1: %{name}-16.png
 Source2: %{name}-32.png
+Patch0: airtunes.patch
 License: GPL
 Group: Sound
 Url: http://0pointer.de/lennart/projects/paprefs/
@@ -49,6 +50,7 @@ server.
 %else
 %setup -q
 %endif
+%patch -p1 -b .airtunes
 
 %build
 %if %{svn}
