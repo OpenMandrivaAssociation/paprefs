@@ -1,6 +1,6 @@
 %define name paprefs
 %define version 0.9.7
-%define rel 1
+%define rel 2
 %define svn 0
 %if %{svn}
 %define release %mkrel 0.%{svn}.%rel
@@ -50,7 +50,7 @@ server.
 %else
 %setup -q
 %endif
-%patch -p1 -b .airtunes
+%patch0 -p1 -b .airtunes
 
 %build
 %if %{svn}
