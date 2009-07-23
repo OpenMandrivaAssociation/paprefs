@@ -1,6 +1,6 @@
 %define name paprefs
 %define version 0.9.8
-%define rel 1
+%define rel 2
 %define svn 0
 %if %{svn}
 %define release %mkrel 0.%{svn}.%rel
@@ -19,6 +19,7 @@ Source0: %{name}-%{version}.tar.gz
 %endif
 Source1: %{name}-16.png
 Source2: %{name}-32.png
+Patch1: 0001-Always-use-a-trailing-slash-upstream-pulse-now-doesn.patch
 License: GPL
 Group: Sound
 Url: http://0pointer.de/lennart/projects/paprefs/
@@ -49,12 +50,14 @@ server.
 %else
 %setup -q
 %endif
+%apply_patches
 
 %build
 %if %{svn}
 libtoolize --force
 NOCONFIGURE=1 ./bootstrap.sh
 %endif
+autoreconf
 %configure2_5x
 %make
 
