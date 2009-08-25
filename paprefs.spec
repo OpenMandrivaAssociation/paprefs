@@ -32,7 +32,7 @@ BuildRequires: libpulseaudio-devel >= 0.9.7
 BuildRequires: lynx
 BuildRequires: desktop-file-utils
 Requires: pulseaudio-module-gconf
-Requires: gnome-packagekit
+Suggests: gnome-packagekit
 Requires(post): desktop-file-utils
 Requires(postun): desktop-file-utils
 
