@@ -1,9 +1,9 @@
 %define name paprefs
-%define version 0.9.8
-%define rel 2
-%define svn 0
-%if %{svn}
-%define release %mkrel 0.%{svn}.%rel
+%define version 0.9.9
+%define rel 1
+%define git 20090825
+%if %{git}
+%define release %mkrel 0.%{git}.%rel
 %else
 %define release %mkrel %rel
 %endif
@@ -12,14 +12,13 @@ Summary: PulseAudio Preferences
 Name: %{name}
 Version: %{version}
 Release: %{release}
-%if %{svn}
-Source0: %{name}-%{svn}.tar.gz
+%if %{git}
+Source0: %{name}-%{git}.tar.lzma
 %else
 Source0: %{name}-%{version}.tar.gz
 %endif
 Source1: %{name}-16.png
 Source2: %{name}-32.png
-Patch1: 0001-Always-use-a-trailing-slash-upstream-pulse-now-doesn.patch
 License: GPL
 Group: Sound
 Url: http://0pointer.de/lennart/projects/paprefs/
@@ -45,7 +44,7 @@ requires that a special module module-gconf is loaded in the sound
 server.
 
 %prep
-%if %{svn}
+%if %{git}
 %setup -q -n %{name}
 %else
 %setup -q
@@ -53,7 +52,7 @@ server.
 %apply_patches
 
 %build
-%if %{svn}
+%if %{git}
 libtoolize --force
 NOCONFIGURE=1 ./bootstrap.sh
 %endif
