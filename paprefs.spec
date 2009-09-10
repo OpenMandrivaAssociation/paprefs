@@ -1,7 +1,7 @@
 %define name paprefs
 %define version 0.9.9
 %define rel 1
-%define git 20090825
+%define git 0
 %if %{git}
 %define release %mkrel 0.%{git}.%rel
 %else
