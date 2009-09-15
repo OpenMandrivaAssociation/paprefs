@@ -1,6 +1,6 @@
 %define name paprefs
 %define version 0.9.9
-%define rel 1
+%define rel 2
 %define git 0
 %if %{git}
 %define release %mkrel 0.%{git}.%rel
@@ -32,7 +32,6 @@ BuildRequires: libpulseaudio-devel >= 0.9.7
 BuildRequires: lynx
 BuildRequires: desktop-file-utils
 Requires: pulseaudio-module-gconf
-Suggests: gnome-packagekit
 Requires(post): desktop-file-utils
 Requires(postun): desktop-file-utils
 
