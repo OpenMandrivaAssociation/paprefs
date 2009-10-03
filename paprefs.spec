@@ -1,6 +1,6 @@
 %define name paprefs
 %define version 0.9.9
-%define rel 4
+%define rel 5
 %define git 0
 %if %{git}
 %define release %mkrel 0.%{git}.%rel
@@ -19,6 +19,8 @@ Source0: %{name}-%{version}.tar.gz
 %endif
 Source1: %{name}-16.png
 Source2: %{name}-32.png
+Patch100: 0100-packagekit-Tidy-up-packagekit-UI-integration-code.patch
+Patch200: 0200-Disable-packagekit-integration-it-doesn-t-work-in-Ma.patch
 License: GPL
 Group: Sound
 Url: http://0pointer.de/lennart/projects/paprefs/
