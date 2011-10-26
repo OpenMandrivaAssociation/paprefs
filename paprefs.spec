@@ -1,6 +1,6 @@
 %define name paprefs
 %define version 0.9.10
-%define rel 1
+%define rel 2
 %define git 0
 %if %{git}
 %define release %mkrel 0.%{git}.%rel
@@ -19,6 +19,7 @@ Source0: %{name}-%{version}.tar.xz
 %endif
 Source1: %{name}-16.png
 Source2: %{name}-32.png
+Patch0: russian-translation.patch
 License: GPL
 Group: Sound
 Url: http://0pointer.de/lennart/projects/paprefs/
