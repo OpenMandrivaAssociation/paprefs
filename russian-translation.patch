@@ -1,0 +1,143 @@
+diff -urN paprefs-0.9.10-orig/po/LINGUAS paprefs-0.9.10/po/LINGUAS
+--- paprefs-0.9.10-orig/po/LINGUAS	2011-10-26 23:52:12.523709296 +0600
++++ paprefs-0.9.10/po/LINGUAS	2011-10-26 23:47:46.000000000 +0600
+@@ -22,6 +22,7 @@
+ pl
+ pt
+ pt_BR
++ru
+ sk
+ sr
+ sr@latin
+diff -urN paprefs-0.9.10-orig/po/ru.po paprefs-0.9.10/po/ru.po
+--- paprefs-0.9.10-orig/po/ru.po	1970-01-01 05:00:00.000000000 +0500
++++ paprefs-0.9.10/po/ru.po	2011-10-26 23:47:06.000000000 +0600
+@@ -0,0 +1,128 @@
++# SOME DESCRIPTIVE TITLE.
++# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
++# This file is distributed under the same license as the PACKAGE package.
++# 
++# Translators:
++#   <kolyadas89@gmail.com>, 2011.
++msgid ""
++msgstr ""
++"Project-Id-Version: test2\n"
++"Report-Msgid-Bugs-To: \n"
++"POT-Creation-Date: 2011-10-21 03:24+0600\n"
++"PO-Revision-Date: 2011-10-21 06:43+0000\n"
++"Last-Translator: SvetlanaK <kolyadas89@gmail.com>\n"
++"Language-Team: LANGUAGE <LL@li.org>\n"
++"MIME-Version: 1.0\n"
++"Content-Type: text/plain; charset=UTF-8\n"
++"Content-Transfer-Encoding: 8bit\n"
++"Language: ru\n"
++"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
++
++#: ../src/paprefs.desktop.in.h:1 ../src/paprefs.glade.h:17
++msgid "PulseAudio Preferences"
++msgstr "Параметры PulseAudio"
++
++#: ../src/paprefs.desktop.in.h:2
++msgid "Sound Server Preferences"
++msgstr "Параметры звукового сервера"
++
++#: ../src/paprefs.desktop.in.h:3
++msgid "View and modify the configuration of the local sound server"
++msgstr "Просмотрите и измените конфигурацию локального звукового сервера"
++
++#: ../src/paprefs.glade.h:1
++msgid ""
++"<i>Apple and AirTunes are trademarks of Apple Inc., registered in the U.S. "
++"and other countries.</i>"
++msgstr ""
++"<i>Apple и AirTunes являются товарными знаками Apple Inc., зарегистрированными "
++"в Соединенных Штатах и других странах.</i>"
++
++#: ../src/paprefs.glade.h:2
++msgid ""
++"Add _virtual output device for simultaneous output on all local sound cards"
++msgstr ""
++"Добавить виртуальное устройство вывода для синхронного вывода на все "
++"локальные звуковые карты"
++
++#: ../src/paprefs.glade.h:3
++msgid "Allow other machines on the LAN to _discover local sound devices"
++msgstr ""
++"Разрешить другим устройствам, находящимся в локальной сети, обнаруживать "
++"локальные звуковые устройства"
++
++#: ../src/paprefs.glade.h:4
++msgid "Create separate audio device _for Multicast/RTP"
++msgstr "Создать отдельное звуковое устройство для  Multicast/RTP потока"
++
++#: ../src/paprefs.glade.h:5
++msgid "Create separate audio device for DLNA/UPnP media streaming"
++msgstr "Создать отдельное звуковое устройство для DLNA/UPnP потока данных"
++
++#: ../src/paprefs.glade.h:6
++msgid "Don't _require authentication"
++msgstr "Не запрашивать аутентификацию"
++
++#: ../src/paprefs.glade.h:7
++msgid "Enable Multicast/RTP re_ceiver"
++msgstr "Включить Multicast/RTP приемник"
++
++#: ../src/paprefs.glade.h:8
++msgid "Enable Multicast/RTP s_ender"
++msgstr "Включить Multicast/RTP передатчик"
++
++#: ../src/paprefs.glade.h:9
++msgid "Enable _network access to local sound devices"
++msgstr "Разрешить локальным звуковым устройствам доступ к сети"
++
++#: ../src/paprefs.glade.h:10
++msgid "Install..."
++msgstr "Установка..."
++
++#: ../src/paprefs.glade.h:11
++msgid "Make discoverable Apple A_irTunes sound devices available locally"
++msgstr ""
++"Установить локальный доступ к обнаруженным звуковым устройствам Apple "
++"A_irTunes"
++
++#: ../src/paprefs.glade.h:12
++msgid "Make discoverable _PulseAudio network sound devices available locally"
++msgstr ""
++"Установить локальный доступ к обнаруженным сетевым звуковым устройствам "
++"_PulseAudio"
++
++#: ../src/paprefs.glade.h:13
++msgid "Make local sound devices available as DLNA/_UPnP Media Server"
++msgstr ""
++"Установить доступные локальные звуковые устройства в качестве DLNA/_UPnP "
++"Media Server"
++
++#: ../src/paprefs.glade.h:14
++msgid "Multicast/R_TP"
++msgstr "Multicast/R_TP"
++
++#: ../src/paprefs.glade.h:15
++msgid "Network _Access"
++msgstr "Сетевой доступ"
++
++#: ../src/paprefs.glade.h:16
++msgid "Network _Server"
++msgstr "Сетевой сервер"
++
++#: ../src/paprefs.glade.h:18
++msgid "Send audio from local _microphone"
++msgstr "Источник звука: локальный микрофон"
++
++#: ../src/paprefs.glade.h:19
++msgid "Send audio from local spea_kers"
++msgstr " Источник звука: локальные динамики"
++
++#: ../src/paprefs.glade.h:20
++msgid "Simultaneous _Output"
++msgstr "Синхронный вывод"
++
++#: ../src/paprefs.glade.h:21
++msgid "_Loop back audio to local speakers"
++msgstr "Закольцованный звук для локальных динамиков"
++
++
