@@ -1,7 +1,7 @@
 Summary:	PulseAudio Preferences
 Name:		paprefs
 Version:	0.9.10
-Release:	16
+Release:	17
 License:	GPLv2
 Group:		Sound
 Url:		http://0pointer.de/lennart/projects/paprefs/
@@ -31,7 +31,9 @@ server.
 %apply_patches
 
 %build
-%configure2_5x
+export CXXFLAGS="%{optflags} -std=c++11"
+
+%configure
 %make
 
 %install
@@ -53,8 +55,6 @@ echo "NotShowIn=KDE;" >> %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %files -f %{name}.lang
 %doc README LICENSE
-%{_bindir}/%name
+%{_bindir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/%{name}/%{name}.glade
-#{_iconsdir}/hicolor/*/apps/%{name}.*
-
