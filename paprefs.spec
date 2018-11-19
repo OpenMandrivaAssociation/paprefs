@@ -14,6 +14,7 @@ BuildRequires:	gettext-devel
 BuildRequires:	pkgconfig(gconfmm-2.6)
 BuildRequires:	pkgconfig(gtkmm-2.4)
 BuildRequires:	pkgconfig(libglademm-2.4)
+BuildRequires:	pkgconfig(dbus-glib-1)
 BuildRequires:	pkgconfig(libpulse)
 Requires:	pulseaudio-module-gconf
 Requires(post,postun):	desktop-file-utils
@@ -27,17 +28,16 @@ requires that a special module module-gconf is loaded in the sound
 server.
 
 %prep
-%setup -q
-%apply_patches
+%autosetup -p1
 
 %build
 export CXXFLAGS="%{optflags} -std=c++11"
 
 %configure
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 sed -i "s/^Icon=.*/Icon=%{name}/" %{buildroot}%{_datadir}/applications/%{name}.desktop
 
