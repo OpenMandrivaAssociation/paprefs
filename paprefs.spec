@@ -17,7 +17,7 @@ BuildRequires:	pkgconfig(giomm-2.4)
 BuildRequires:	pkgconfig(gtkmm-3.0)
 BuildRequires:	pkgconfig(sigc++-2.0)
 BuildRequires:	pkgconfig(libpulse)
-Requires:	pulseaudio-module-gconf
+Requires:	pulseaudio-module-gsettings
 Requires(post,postun):	desktop-file-utils
 
 %description
