@@ -1,7 +1,7 @@
 Summary:	PulseAudio Preferences
 Name:		paprefs
-Version:	0.9.10
-Release:	18
+Version:	1.0
+Release:	1
 License:	GPLv2
 Group:		Sound
 Url:		http://0pointer.de/lennart/projects/paprefs/
@@ -11,9 +11,11 @@ BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
 BuildRequires:	lynx
 BuildRequires:	gettext-devel
-BuildRequires:	pkgconfig(gconfmm-2.6)
-BuildRequires:	pkgconfig(gtkmm-2.4)
-BuildRequires:	pkgconfig(libglademm-2.4)
+BuildRequires:	meson
+BuildRequires:	pkgconfig(dbus-glib-1)
+BuildRequires:	pkgconfig(giomm-2.4)
+BuildRequires:	pkgconfig(gtkmm-3.0)
+BuildRequires:	pkgconfig(sigc++-2.0)
 BuildRequires:	pkgconfig(libpulse)
 Requires:	pulseaudio-module-gconf
 Requires(post,postun):	desktop-file-utils
@@ -33,11 +35,11 @@ server.
 %build
 export CXXFLAGS="%{optflags} -std=c++11"
 
-%configure
-%make
+%meson
+%meson_build
 
 %install
-%makeinstall_std
+%meson_install
 
 sed -i "s/^Icon=.*/Icon=%{name}/" %{buildroot}%{_datadir}/applications/%{name}.desktop
 
@@ -54,7 +56,7 @@ echo "NotShowIn=KDE;" >> %{buildroot}%{_datadir}/applications/%{name}.desktop
 %find_lang %{name}
 
 %files -f %{name}.lang
-%doc README LICENSE
+%doc LICENSE
 %{_bindir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/%{name}/%{name}.glade
