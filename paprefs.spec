@@ -16,7 +16,7 @@ BuildRequires:	pkgconfig(gtkmm-2.4)
 BuildRequires:	pkgconfig(libglademm-2.4)
 BuildRequires:	pkgconfig(dbus-glib-1)
 BuildRequires:	pkgconfig(libpulse)
-Requires:	pulseaudio-module-gconf
+Requires:	pulseaudio-module-gsettings
 Requires(post,postun):	desktop-file-utils
 
 %description
