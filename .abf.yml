@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   paprefs-0.9.10.tar.xz: 6b88d5268a070ac8d80224434975af6c9d754e75
+sources:
+  paprefs-1.0.tar.xz: 2ed55ddfc10cc6f76c74f326cd7542d42a947969
