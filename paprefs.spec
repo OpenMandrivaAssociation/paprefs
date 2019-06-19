@@ -1,6 +1,6 @@
 Summary:	PulseAudio Preferences
 Name:		paprefs
-Version:	1.0
+Version:	1.1
 Release:	1
 License:	GPLv2
 Group:		Sound
