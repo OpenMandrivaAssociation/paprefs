@@ -4,7 +4,7 @@ Version:	1.2
 Release:	2
 License:	GPLv2
 Group:		Sound
-Url:		http://0pointer.de/lennart/projects/paprefs/
+Url:		https://0pointer.de/lennart/projects/paprefs/
 Source0:	http://freedesktop.org/software/pulseaudio/paprefs/%{name}-%{version}.tar.xz
 
 BuildRequires:	desktop-file-utils
